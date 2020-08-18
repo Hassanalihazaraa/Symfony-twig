@@ -12,4 +12,9 @@
     <div>
     <h1>Hello {{ name|capitalize }}</h1>
     <div class="text-center">{{ form(form) }}</div>
+
+    <div class="text-center mt-5">
+        <h2>Today's Quotes:</h2>
+        <p>{{ Quotes()|nl2br }}</p>
+    </div>
 {% endblock %}
