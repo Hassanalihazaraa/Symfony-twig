@@ -10,9 +10,10 @@
 <body>
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
-
-{% block footer %}
-    <footer>&copy; BECODE</footer>
-{% endblock %}
+<footer>
+    {% block footer %}
+        &copy; BECODE
+    {% endblock %}
+</footer>
 </body>
 </html>
