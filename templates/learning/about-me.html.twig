@@ -25,6 +25,14 @@
         }
     </style>
 
+    {% block menu %}
+        {{ parent() }}
+        Europe: {{ date|format_date(pattern="d/M/Y") }}
+        America: {{ date|format_date(pattern="M/d/Y") }}
+        China/Japan: {{ date|format_date(pattern="Y/M/d") }}
+    {% endblock %}
+
+
     <div class="example-wrapper">
         <div class="example-wrapper">
             <h1>Hello my name is {{ name }}! ✅</h1>

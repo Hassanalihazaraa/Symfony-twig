@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use DateTimeImmutable;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -22,7 +23,8 @@ class LearningController extends AbstractController
     public function aboutMe(SessionInterface $session): Response
     {
         if ($session->get('name')) {
-            return $this->render('learning/about-me.html.twig', ['name' => $session->get('name')]);
+            $date = new DateTimeImmutable();
+            return $this->render('learning/about-me.html.twig', ['name' => $session->get('name'), 'date' => $date]);
         }
         return $this->forward('App\Controller\LearningController::showMyName');
     }
