@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My name{% endblock %}
+
+{% block body %}
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+<div>
+    <a href="{{ path('about') }}" class="link-primary">About me</a>
+    <h1>Hello {{ name }}</h1>
+    <div class="text-center">{{ form(form) }}</div>
+    {% endblock %}
+    {% block footer %} {% endblock %}
